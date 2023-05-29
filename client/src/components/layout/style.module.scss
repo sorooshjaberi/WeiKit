@@ -45,6 +45,20 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .network {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // padding: 3px;
+        border: #161b22 solid 1px;
+        margin-right: 10px;
+        border-radius: 100px;
+        background-color: $color-primary-dark;
+
+      }
     }
   }
 }
