@@ -20806,63 +20806,25 @@
   "ast": {
     "absolutePath": "project:/contracts/ERC20Token.sol",
     "exportedSymbols": {
-      "AccessControl": [
-        341
-      ],
-      "AccessControlEnumerable": [
-        466
-      ],
-      "Context": [
-        1601
-      ],
-      "ERC165": [
-        1854
-      ],
-      "ERC20": [
-        1259
-      ],
-      "ERC20Burnable": [
-        1381
-      ],
-      "ERC20Pausable": [
-        1418
-      ],
-      "ERC20PresetMinterPauser": [
-        1579
-      ],
-      "ERC20Token": [
-        25
-      ],
-      "EnumerableSet": [
-        3450
-      ],
-      "IAccessControl": [
-        539
-      ],
-      "IAccessControlEnumerable": [
-        564
-      ],
-      "IERC165": [
-        1866
-      ],
-      "IERC20": [
-        1337
-      ],
-      "IERC20Metadata": [
-        1443
-      ],
-      "Math": [
-        2732
-      ],
-      "Pausable": [
-        672
-      ],
-      "SignedMath": [
-        2837
-      ],
-      "Strings": [
-        1830
-      ]
+      "AccessControl": [341],
+      "AccessControlEnumerable": [466],
+      "Context": [1601],
+      "ERC165": [1854],
+      "ERC20": [1259],
+      "ERC20Burnable": [1381],
+      "ERC20Pausable": [1418],
+      "ERC20PresetMinterPauser": [1579],
+      "ERC20Token": [25],
+      "EnumerableSet": [3450],
+      "IAccessControl": [539],
+      "IAccessControlEnumerable": [564],
+      "IERC165": [1866],
+      "IERC20": [1337],
+      "IERC20Metadata": [1443],
+      "Math": [2732],
+      "Pausable": [672],
+      "SignedMath": [2837],
+      "Strings": [1830]
     },
     "id": 26,
     "license": "MIT",
@@ -20870,12 +20832,7 @@
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.8", ".0"],
         "nodeType": "PragmaDirective",
         "src": "32:23:0"
       },
@@ -20898,9 +20855,7 @@
             "baseName": {
               "id": 3,
               "name": "ERC20PresetMinterPauser",
-              "nameLocations": [
-                "178:23:0"
-              ],
+              "nameLocations": ["178:23:0"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 1579,
               "src": "178:23:0"
@@ -20916,21 +20871,8 @@
         "fullyImplemented": true,
         "id": 25,
         "linearizedBaseContracts": [
-          25,
-          1579,
-          1418,
-          672,
-          1381,
-          1259,
-          1443,
-          1337,
-          466,
-          341,
-          1854,
-          1866,
-          564,
-          539,
-          1601
+          25, 1579, 1418, 672, 1381, 1259, 1443, 1337, 466, 341, 1854, 1866,
+          564, 539, 1601
         ],
         "name": "ERC20Token",
         "nameLocation": "164:10:0",
@@ -21069,9 +21011,7 @@
                 "modifierName": {
                   "id": 12,
                   "name": "ERC20PresetMinterPauser",
-                  "nameLocations": [
-                    "312:23:0"
-                  ],
+                  "nameLocations": ["312:23:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 1579,
                   "src": "312:23:0"
