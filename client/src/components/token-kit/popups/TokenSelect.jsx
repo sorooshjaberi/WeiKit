@@ -5,6 +5,7 @@ import { tokens } from "./../../../../token";
 import { getCurrentNetwork } from "@/helpers/metamask";
 import { useWeb3 } from "@/web3/Web3Provider";
 import { useState } from "react";
+import Web3 from "web3";
 const TokenSelect = ({ onClose }) => {
   const { setContractInWeb3, web3 } = useWeb3();
   const [current, setCurrent] = useState();
@@ -14,8 +15,10 @@ const TokenSelect = ({ onClose }) => {
       <div className={styles["body"]}>
         <div className={styles["tokens"]}>
           {tokens
-            .filter(async (token) => {
-              token.network === (await getCurrentNetwork());
+            .filter((token) => {
+              console.log(token.network);
+              console.log(token.network === window?.ethereum?.networkVersion);
+              return token.network === window?.ethereum?.networkVersion;
             })
             .map((token, i) => {
               console.log(token);
@@ -24,7 +27,7 @@ const TokenSelect = ({ onClose }) => {
                   className={[
                     `${styles["tokens-token"]} 
                     ${
-                      token.tokenAddress ===current
+                      token.tokenAddress === current
                         ? styles["tokens-token--active"]
                         : null
                     }
