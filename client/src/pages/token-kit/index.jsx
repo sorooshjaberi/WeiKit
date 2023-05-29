@@ -34,15 +34,15 @@ const TokenKit = () => {
   return (
     <>
       <div className={styles["body"]}>
-        <KitControllers />
         <div className={styles["main"]}>
           {/* <ContractMethod methodName={"increaseAllowance"} />
           <ContractMethod methodName={"allowance"} />
-          <ContractMethod methodName={"balanceOf"} /> */}
+        <ContractMethod methodName={"balanceOf"} /> */}
           <div className={styles["methods-list"]}>
             <div style={{ height: "1000px" }}></div>
           </div>
         </div>
+        <KitControllers />
       </div>
     </>
   );

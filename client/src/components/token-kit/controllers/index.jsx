@@ -11,10 +11,10 @@ const KitControllers = () => {
       popup = <Networks onClose={setPopupNumber.bind(null, 0)} />;
       break;
     case 2:
-      popup = <TokenSelect />;
+      popup = <TokenSelect onClose={setPopupNumber.bind(null, 0)}/>;
       break;
     case 3:
-      popup = <TokenImport />;
+      popup = <TokenImport onClose={setPopupNumber.bind(null, 0)}/>;
       break;
 
     default:
