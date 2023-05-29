@@ -1,0 +1,123 @@
+.header {
+  height: 60px;
+  background-color: #161b22;
+  color: #eff6fc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  .header-data {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      margin-right: 40px;
+      width: max-content;
+    }
+    .nav-bar {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      .nav-link-box {
+        margin-right: 30px;
+        .nav-link {
+          color: #eff6fc;
+          text-decoration: none;
+          transition: all ease 0.1s;
+          &:hover {
+            color: #9317ff;
+          }
+        }
+      }
+    }
+  }
+  .nav-controllers {
+    .nav-controller {
+      background-color: #9317ff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.main {
+  padding: 20px;
+  height: calc(100vh - (210px));
+  color: #eff6fc;
+}
+.footer {
+  width: 100%;
+  background-color: #161b22;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  color: #eff6fc;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  &-nav-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .footer-nav-title {
+      width: 200px;
+      border-bottom: #eff6fc 1px solid;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+    }
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      width: 200px;
+      &-link {
+        text-decoration: none;
+        color: #eff6fc;
+        margin-right: 20px;
+        transition: 0.1s ease all;
+        &:hover {
+          color: #9317ff;
+        }
+      }
+    }
+  }
+  &-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &-title {
+      width: 200px;
+      border-bottom: #eff6fc 1px solid;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+    }
+    &-items {
+      display: flex;
+      width: 200px;
+      flex-wrap: wrap;
+      justify-content: start;
+      &-item {
+        font-size: 25px;
+        margin: 0 5px 0 0;
+        a {
+          color: #9317ff;
+          transition: all 0.1s ease;
+          &:visited,
+          &:active {
+            color: #9317ff;
+          }
+          &:hover {
+            color: #eff6fc;
+          }
+        }
+      }
+    }
+  }
+}

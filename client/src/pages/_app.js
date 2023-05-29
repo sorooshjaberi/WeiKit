@@ -1,5 +1,6 @@
+import MainLayout from "@/components/layout/MainLayout";
 import { Web3Provider } from "@/web3/Web3Provider";
-
+import "../styles/globals.css";
 export default function App({ Component, pageProps }) {
   //to make method labels from abi method name(camel case to sentence)
   String.prototype.toSentence = function () {
@@ -14,7 +15,9 @@ export default function App({ Component, pageProps }) {
   };
   return (
     <Web3Provider>
-      <Component {...pageProps} />
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
     </Web3Provider>
     // <DrizzleProvider>
     //   <Component {...pageProps} />
