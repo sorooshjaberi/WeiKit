@@ -20,31 +20,29 @@ const Networks = ({ onClose }) => {
           {networksData.map((network, i) => {
             const already = current === network.id;
             return (
-              <>
-                <div
-                  className={[
-                    `${styles["networks-network"]}
+              <div
+                className={[
+                  `${styles["networks-network"]}
                     ${already ? styles["networks-network--active"] : null}
                   `,
-                  ]}
-                  onClick={() => {
-                    setNetwork(network.id)
-                      .then(() => {
-                        setCurrent(network.id);
-                      })
-                      .catch((e) => console.log(e.message));
-                  }}
-                  key={i}
-                >
-                  <span>{network.name}</span>
-                  <Image
-                    alt="network-name"
-                    width={40}
-                    height={40}
-                    src={network.src}
-                  />
-                </div>
-              </>
+                ]}
+                onClick={() => {
+                  setNetwork(network.id)
+                    .then(() => {
+                      setCurrent(network.id);
+                    })
+                    .catch((e) => console.log(e.message));
+                }}
+                key={i}
+              >
+                <span>{network.name}</span>
+                <Image
+                  alt="network-name"
+                  width={40}
+                  height={40}
+                  src={network.src}
+                />
+              </div>
             );
           })}
         </div>
