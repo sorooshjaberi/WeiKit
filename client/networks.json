@@ -1,0 +1,20 @@
+{
+  "mainnet": {
+    "name": "Ethereum Mainnet",
+    "chainId": 1,
+    "rpcUrl": "https://mainnet.infura.io/v3/YOUR-PROJECT-ID",
+    "explorerUrl": "https://etherscan.io"
+  },
+  "polygon": {
+    "name": "Polygon",
+    "chainId": 137,
+    "rpcUrl": "https://rpc-mainnet.maticvigil.com",
+    "explorerUrl": "https://polygonscan.com"
+  },
+  "bsc": {
+    "name": "Binance Smart Chain",
+    "chainId": 56,
+    "rpcUrl": "https://bsc-dataseed1.binance.org",
+    "explorerUrl": "https://bscscan.com"
+  }
+}

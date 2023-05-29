@@ -1,2 +1,3 @@
 use (useContract) to create a token  
 use (useWeb3) to get access to web3 object provider by web3 context
+change network function

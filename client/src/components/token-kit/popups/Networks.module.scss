@@ -1,0 +1,38 @@
+@import "../../../styles/variables";
+.body {
+//   width: 600px;
+  border-radius: 8px;
+//   padding: 20px 30px;
+  //   height: 400px;
+  background-color: $color-primary-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .networks {
+    width: 380px;
+    // height: 168px;
+    background-color: $color-secondary-dark;
+    padding: 10px 20px;
+    border-radius: 8px;
+    &-network {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      margin-bottom: 10px;
+      padding: 3px 5px;
+      border-radius: 8px;
+      image {
+        width: 20px;
+        height: 20px;
+      }
+      &:hover {
+        background-color: lighten($color: $color-secondary-dark, $amount: 10);
+      }
+      &--active {
+        background-color: darken($color: $color-secondary-dark, $amount: 10);
+      }
+    }
+  }
+}

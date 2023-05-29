@@ -1,0 +1,5 @@
+[
+  { "name": "Ethereum Mainnet", "src": "/ether.png", "id": "1" },
+  { "name": "Binance Smart Chain", "src": "/bnb.png", "id": "56" },
+  { "name": "Polygon (Matic)", "src": "/polygon.png", "id": "137" }
+]
