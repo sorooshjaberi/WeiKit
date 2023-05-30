@@ -16,12 +16,12 @@ const TokenSelect = ({ onClose }) => {
         <div className={styles["tokens"]}>
           {tokens
             .filter((token) => {
-              console.log(token.network);
-              console.log(token.network === window?.ethereum?.networkVersion);
+              // console.log(token.network);
+              // console.log(token.network === window?.ethereum?.networkVersion);
               return token.network === window?.ethereum?.networkVersion;
             })
             .map((token, i) => {
-              console.log(token);
+              // console.log(token);
               return (
                 <div
                   className={[
@@ -34,7 +34,7 @@ const TokenSelect = ({ onClose }) => {
                   `,
                   ]}
                   onClick={() => {
-                    setContractInWeb3(token.tokenAddress);
+                    setContractInWeb3(token.tokenAddress , token);
                     setCurrent(token.tokenAddress);
                   }}
                   key={i}

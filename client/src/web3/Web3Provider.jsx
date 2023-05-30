@@ -2,13 +2,18 @@ import { useContext, useEffect, useState, createContext } from "react";
 import Web3 from "web3";
 import { abi } from "../../public/artifacts/ERC20Token.json";
 
-export const Web3Context = createContext({web3:{} , setContractInWeb3 : ()=>{}});
+export const Web3Context = createContext({
+  web3: {},
+  setContractInWeb3: () => {},
+  contract: {},
+});
 
 export const Web3Provider = ({ children }) => {
   const [web3, setWeb3] = useState();
   const [eth, setEth] = useState();
-  function setContractInWeb3(address) {
+  function setContractInWeb3(address, payload = {}) {
     const contract = new web3.eth.Contract(abi, address);
+    Object.assign(contract, payload);
     localStorage.setItem("contract_address", address);
     console.log("contract : ", contract);
     setWeb3({ ...web3, contract });
@@ -31,7 +36,9 @@ export const Web3Provider = ({ children }) => {
         </>
       )}
       {eth && (
-        <Web3Context.Provider value={{ web3, setContractInWeb3 }}>
+        <Web3Context.Provider
+          value={{ web3, setContractInWeb3, contract: web3?.contract }}
+        >
           {children}
         </Web3Context.Provider>
       )}

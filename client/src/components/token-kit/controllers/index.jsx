@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import Networks from "../popups/Networks";
 import TokenSelect from "../popups/TokenSelect";
 import TokenImport from "../popups/TokenImport";
+import SelectedTokenData from "./SelectedTokenData";
 const KitControllers = () => {
   const [popoupNumber, setPopupNumber] = useState(0);
   let popup = null;
@@ -41,6 +42,7 @@ const KitControllers = () => {
       >
         Import Token
       </button>
+      <SelectedTokenData/>
       {popup}
     </div>
   );
