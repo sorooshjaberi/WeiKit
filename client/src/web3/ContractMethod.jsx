@@ -14,8 +14,9 @@ const ContractMethod = ({ methodName }) => {
     const response = await web3.contract?.methods[methodName](...realArgs)
       .send({
         from: await web3.eth.requestAccounts().then((e) => e[0]),
-      }).catch(() => {
-        setResponse('transaction faild!')
+      })
+      .catch(() => {
+        setResponse("transaction faild!");
       })
       .finally(() => {
         setIsLoading(false);
@@ -29,8 +30,9 @@ const ContractMethod = ({ methodName }) => {
     setIsLoading(true);
 
     response = await web3.contract?.methods[methodName](...realArgs)
-      .call().catch(() => {
-        setResponse('view faild!')
+      .call()
+      .catch(() => {
+        setResponse("view faild!");
       })
       .finally(() => {
         setIsLoading(false);
@@ -105,7 +107,14 @@ const ContractMethod = ({ methodName }) => {
             View
           </button>
         )}
-        {response && <div className={styles["response"]}>{response}</div>}
+        {response && response.length >= 10 && !isNaN(response) && (
+          <div className={styles["response"]}>
+            {web3.utils.fromWei(response)}
+          </div>
+        )}
+        {response && (response.length < 10 || isNaN(response)) && (
+          <div className={styles["response"]}>{response}</div>
+        )}
         {isLoading && (
           <div className={styles["loading"]}>
             <BarLoader />
