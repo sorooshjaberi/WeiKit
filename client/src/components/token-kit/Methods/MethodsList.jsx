@@ -22,7 +22,7 @@ const MethodsList = ({ setWideMethod, wideMethod }) => {
         <button
           onClick={() => {
             //set the wide method
-            if (method.name !== wideMethod.name) {
+            if (method.name !== wideMethod?.name) {
               setWideMethod(method);
             }
           }}
