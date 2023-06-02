@@ -1,5 +1,5 @@
 import styles from "./methodslList.module.scss";
-import { abi } from "/artifacts/ERC20.json";
+import { abi } from "../../../../public/artifacts/ERC20.json";
 
 function getMethodsByType(type) {
   // filtering only functions (not events and constructor)
