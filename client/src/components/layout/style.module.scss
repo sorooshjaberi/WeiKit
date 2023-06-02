@@ -138,3 +138,18 @@
     }
   }
 }
+.github  {
+scale: 1.5;
+  margin: 0 5px 0 0;
+  a {
+    color: #9317ff;
+    transition: all 0.1s ease;
+    &:visited,
+    &:active {
+      color: #9317ff;
+    }
+    &:hover {
+      color: #eff6fc;
+    }
+  }
+}

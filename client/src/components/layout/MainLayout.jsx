@@ -100,7 +100,7 @@ const MainLayout = ({ children }) => {
           </div>
         </div>
         <div className={styles["footer-social"]}>
-          <h3 className={styles["footer-social-title"]}>
+          {/* <h3 className={styles["footer-social-title"]}>
             Developed by <br /> Soroush Jaberi
           </h3>
           <div className={styles["footer-social-items"]}>
@@ -127,6 +127,14 @@ const MainLayout = ({ children }) => {
                 <BsMedium />
               </Link>
             </div>
+          </div> */}
+          <div className={styles["github"]}>
+            <Link
+              target="_blank"
+              href={"https://github.com/sorooshjaberi/WeiKit"}
+            >
+              <BsGithub />
+            </Link>
           </div>
         </div>
       </footer>
