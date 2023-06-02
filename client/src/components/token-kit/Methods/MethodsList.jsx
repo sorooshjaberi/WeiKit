@@ -1,11 +1,11 @@
 import styles from "./methodslList.module.scss";
-import { abi } from "../../../../public/artifacts/ERC20.json";
+import abiData from "../../../../public/artifacts/ERC20.json";
 
 function getMethodsByType(type) {
   // filtering only functions (not events and constructor)
   // transfor functions data to custom object
   // filter only the intended type of function
-  return abi
+  return abiData.abi
     .filter((method) => method.type === "function")
     .map((method, index) => ({
       name: method.name,
