@@ -1,0 +1,38 @@
+@import "../../../styles/variables";
+
+.container {
+  width: 300px;
+  height: 250px;
+  position: relative;
+  background-color: $color-secondary-dark;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0px;
+  input {
+    height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    width: 70%;
+    display: block;
+  }
+  button {
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    background-color: $color-secondary-light;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+  }
+}
+.error-p {
+  position: absolute;
+  bottom: 10px;
+  color: orangered;
+  font-size: 10px;
+}
