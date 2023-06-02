@@ -1,16 +1,17 @@
 import Popup from "@/components/ui/Popup";
 import styles from "./tokenImport.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useWeb3 } from "@/web3/Web3Provider";
-import Web3 from "web3";
+import { getCurrentNetwork } from "@/helpers/metamask";
 const TokenImport = ({ onClose }) => {
   const { setContractInWeb3, web3 } = useWeb3();
   const [error, setError] = useState();
   const addressRef = useRef("");
   const buttonRef = useRef();
   function importHandler() {
-   setContractInWeb3(addressRef.current.value);
-   onClose();
+    console.log(getCurrentNetwork());
+    setContractInWeb3(addressRef.current.value, {network : getCurrentNetwork()});
+    onClose();
   }
 
   return (
@@ -24,11 +25,11 @@ const TokenImport = ({ onClose }) => {
             if (!web3?.utils.isAddress(event.target.value)) {
               setError("address is incorrect");
               buttonRef.current.disabled = true;
-              buttonRef.current.style.cursor = "not-allowed"
+              buttonRef.current.style.cursor = "not-allowed";
             } else {
               setError(null);
               buttonRef.current.disabled = false;
-              buttonRef.current.style.cursor = "pointer"
+              buttonRef.current.style.cursor = "pointer";
             }
           }}
         />
