@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { abi } from "../../public/artifacts/ERC20.json";
+import { abi } from "/artifacts/ERC20.json";
 import { useWeb3 } from "./Web3Provider";
 import styles from "./style.module.scss";
 import { BarLoader } from "react-spinners";
