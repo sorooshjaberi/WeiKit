@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState, createContext } from "react";
 import Web3 from "web3";
-import { abi } from "../../public/artifacts/ERC20Token.json";
+import abiData from "../../public/artifacts/ERC20Token.json";
+const { abi } = abiData;
 
 export const Web3Context = createContext({
   web3: {},

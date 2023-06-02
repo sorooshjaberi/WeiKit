@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { abi } from "../../public/artifacts/ERC20.json";
+import abiData from "../../public/artifacts/ERC20.json";
 import { useWeb3 } from "./Web3Provider";
 import styles from "./style.module.scss";
 import { BarLoader } from "react-spinners";
@@ -59,7 +59,7 @@ const ContractMethod = ({ methodName }) => {
     console.log(args);
   }, [args]);
 
-  const method = abi.find((method) => method?.name === methodName);
+  const method = abiData.abi.find((method) => method?.name === methodName);
 
   if (!method) return;
 

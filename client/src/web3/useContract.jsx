@@ -1,5 +1,6 @@
-import { abi, bytecode } from "../../public/artifacts/ERC20Token.json";
+import abiData from "../../public/artifacts/ERC20Token.json";
 import { useWeb3 } from "./Web3Provider";
+const { abi, bytecode } = abiData;
 const useContract = () => {
   console.log(abi);
   const { web3, setContractInWeb3 } = useWeb3();
