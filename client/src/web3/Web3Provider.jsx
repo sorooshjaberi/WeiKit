@@ -10,7 +10,6 @@ export const Web3Context = createContext({
 
 export const Web3Provider = ({ children }) => {
   const [web3, setWeb3] = useState();
-  const [eth, setEth] = useState();
   function setContractInWeb3(address, payload = {}) {
     const contract = new web3.eth.Contract(abi, address);
     Object.assign(contract, payload);
@@ -24,24 +23,13 @@ export const Web3Provider = ({ children }) => {
     // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
-    setEth(window?.ethereum);
-  }, []);
   return (
     <>
-      {!eth && (
-        <>
-          <p>metamask is not installed</p>
-          {children}
-        </>
-      )}
-      {eth && (
-        <Web3Context.Provider
-          value={{ web3, setContractInWeb3, contract: web3?.contract }}
-        >
-          {children}
-        </Web3Context.Provider>
-      )}
+      <Web3Context.Provider
+        value={{ web3, setContractInWeb3, contract: web3?.contract }}
+      >
+        {children}
+      </Web3Context.Provider>
     </>
   );
 };

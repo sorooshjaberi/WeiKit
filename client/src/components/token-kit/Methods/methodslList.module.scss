@@ -1,0 +1,21 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+.view-button{
+    background-color: blue;
+}
+.nonpayable-button {
+    background-color: orange;
+
+}
+.method-button{
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;    
+}

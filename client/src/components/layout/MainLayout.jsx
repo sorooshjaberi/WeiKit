@@ -14,6 +14,8 @@ const networksData = [
 const MainLayout = ({ children }) => {
   const [account, setAccount] = useState();
   const [network, setNetwork] = useState();
+  const [eth, setEth] = useState();
+
   async function connectWallet() {
     const account = await web3.eth
       .requestAccounts()
@@ -29,16 +31,19 @@ const MainLayout = ({ children }) => {
   }
   async function networkChanger(chainId) {
     const networkId = (await chainId) || (await web3.eth.getChainId());
-    console.log(networkId);
     const network = networksData.find((chain) => {
       return +chain.id === networkId;
     });
     setNetwork(network);
   }
   useEffect(() => {
-    window.ethereum.on("chainChanged", () => {
-      networkChanger();
-    });
+    eth &&
+      window.ethereum.on("chainChanged", () => {
+        networkChanger();
+      });
+  }, [eth]);
+  useEffect(() => {
+    setEth(window?.ethereum);
   }, []);
   return (
     <>
@@ -77,7 +82,10 @@ const MainLayout = ({ children }) => {
           </div>
         </div>
       </header>
-      <main className={styles["main"]}>{children}</main>
+      <main className={styles["main"]}>
+        {eth && children}
+        {!eth && <p>Provide Metamask!</p>}
+      </main>
       <footer className={styles["footer"]}>
         <div className={styles["footer-nav-box"]}>
           <h2 className={styles["footer-nav-title"]}>WeiKit</h2>

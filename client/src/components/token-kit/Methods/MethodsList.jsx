@@ -1,0 +1,47 @@
+import styles from "./methodslList.module.scss";
+import { abi } from "../../../../public/artifacts/ERC20.json";
+
+function getMethodsByType(type) {
+  // filtering only functions (not events and constructor)
+  // transfor functions data to custom object
+  // filter only the intended type of function
+  return abi
+    .filter((method) => method.type === "function")
+    .map((method, index) => ({
+      name: method.name,
+      type: method.stateMutability,
+      id: index,
+    }))
+    .filter((method) => method.type === type);
+}
+
+const MethodsList = ({ setWideMethod }) => {
+  function listToButtons(list) {
+    return list.map((method, index) => {
+      return (
+        <button
+          onClick={() => {
+            //set the wide method
+            setWideMethod(method);
+          }}
+          key={index}
+          className={
+            styles[method.type + "-button"] + " " + styles["method-button"]
+          }
+        >
+          {method.name.toSentence()}
+        </button>
+      );
+    });
+  }
+  const Sends = listToButtons(getMethodsByType("nonpayable"));
+  const Views = listToButtons(getMethodsByType("view")).reverse();
+  console.log(Views);
+  return (
+    <div className={styles["list"]}>
+      {Sends}
+      {Views}
+    </div>
+  );
+};
+export default MethodsList;

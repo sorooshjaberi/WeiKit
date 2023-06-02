@@ -4,6 +4,8 @@ import useContract from "@/web3/useContract";
 import { useEffect } from "react";
 import styles from "./style.module.scss";
 import KitControllers from "@/components/token-kit/controllers";
+import MethodsContainer from "@/components/token-kit/Methods/MethodsContainer";
+import MethodsList from "@/components/token-kit/Methods/MethodsList";
 const TokenKit = () => {
   const { createContract } = useContract();
   const { web3, setContractInWeb3 } = useWeb3();
@@ -14,36 +16,27 @@ const TokenKit = () => {
     // }
     //eslint-disable-next-line
   }, []);
-  if (!web3?.contract) {
-    return (
-      <div className={styles["body"]}>
-        <div
-          className={styles["main"]}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <p>Select a Token / contract to interact with</p>
-        </div>
-        <KitControllers />
+
+  const Empty = (
+    <div className={styles["body"]}>
+      <div
+        className={styles["main"]}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <p>Select a Token / contract to interact with</p>
       </div>
-    );
-  }
+      <KitControllers />
+    </div>
+  );
+  const NotEmpty = <MethodsContainer />;
+  const MainContent = web3?.contract ? NotEmpty : Empty;
   return (
     <>
-      <div className={styles["body"]}>
-        <div className={styles["main"]}>
-          {/* <ContractMethod methodName={"increaseAllowance"} />
-          <ContractMethod methodName={"allowance"} />
-        <ContractMethod methodName={"balanceOf"} /> */}
-          <div className={styles["methods-list"]}>
-            <div style={{ height: "1000px" }}></div>
-          </div>
-        </div>
-        <KitControllers />
-      </div>
+      <div className={styles["body"]}>{MainContent}</div>
     </>
   );
 };
