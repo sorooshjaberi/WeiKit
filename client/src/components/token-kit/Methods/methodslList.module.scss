@@ -1,21 +1,23 @@
+@import "../../../styles/variables";
+
 .list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-right: 1rem;
 }
-.view-button{
-    background-color: blue;
+.view-button {
+  background-color: lighten($color: $color-secondary-light, $amount: 20);
 }
 .nonpayable-button {
-    background-color: orange;
-
+    background-color: darken($color: $color-secondary-light, $amount: 20);
 }
-.method-button{
-    border: none;
-    outline: none;
-    margin-bottom: 10px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;    
+.method-button {
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

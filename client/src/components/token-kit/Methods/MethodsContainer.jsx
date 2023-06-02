@@ -10,9 +10,9 @@ const MethodsContainer = () => {
     <>
       <div className={styles["main"]}>
         <div className={styles["methods-list"]}>
-          <MethodsList setWideMethod={setWideMethod} />
+          <MethodsList setWideMethod={setWideMethod} wideMethod={wideMethod} />
         </div>
-        <MethodWide method={wideMethod} />
+        <MethodWide method={wideMethod}  />
       </div>
       <KitControllers />
     </>

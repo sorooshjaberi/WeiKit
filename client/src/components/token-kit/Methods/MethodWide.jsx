@@ -1,16 +1,15 @@
 import ContractMethod from "@/web3/ContractMethod";
-import styles from './methodWide.module.scss'
+import styles from "./methodWide.module.scss";
 const MethodWide = ({ method }) => {
-  if(!method){
-    return (
-      <div className={styles['wide-container']}>
-        select a method
-      </div>
-    )
+  const MethodComponent = () => {
+    return <ContractMethod methodName={method.name} />;
+  };
+  if (!method) {
+    return <div className={styles["wide-container"]}>select a method</div>;
   }
   return (
-    <div>
-      <ContractMethod methodName={method.name}/>
+    <div className={styles["wide-container"]}>
+      <MethodComponent />
     </div>
   );
 };

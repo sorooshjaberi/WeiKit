@@ -15,14 +15,16 @@ function getMethodsByType(type) {
     .filter((method) => method.type === type);
 }
 
-const MethodsList = ({ setWideMethod }) => {
+const MethodsList = ({ setWideMethod, wideMethod }) => {
   function listToButtons(list) {
     return list.map((method, index) => {
       return (
         <button
           onClick={() => {
             //set the wide method
-            setWideMethod(method);
+            if (method.name !== wideMethod.name) {
+              setWideMethod(method);
+            }
           }}
           key={index}
           className={
