@@ -61,5 +61,14 @@
         margin-right: 5px;
       }
     }
+    .summary-data {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      & > * {
+        margin-bottom: 10px;
+      }
+    }
   }
 }

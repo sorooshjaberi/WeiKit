@@ -23,7 +23,7 @@ const SelectedTokenData = () => {
       )}
       {contract?.tokenAddress && (
         <div className={styles["selected-token-details__container"]}>
-          <DetailRow
+          {/* <DetailRow
             label={"Name  "}
             value={
               <>
@@ -37,7 +37,17 @@ const SelectedTokenData = () => {
               </>
             }
           />
-          <DetailRow label={"Symbol "} value={contract.symbol} />
+          <DetailRow label={"Symbol "} value={contract.symbol} /> */}
+          <div className={styles["summary-data"]}>
+            <h3>{contract.symbol}</h3>
+            <Image
+              alt="current network"
+              width={20}
+              height={20}
+              src={contract.imageUrl}
+            />
+            <h6>{contract.name}</h6>
+          </div>
           <DetailRow
             label={"Address "}
             value={

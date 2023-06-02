@@ -28,7 +28,7 @@ const KitControllers = () => {
         className={styles["controllers-controller"]}
         onClick={() => setPopupNumber(1)}
       >
-        Network
+       Select a Network
       </button>
       <button
         className={styles["controllers-controller"]}

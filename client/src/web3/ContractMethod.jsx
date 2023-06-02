@@ -11,12 +11,15 @@ const ContractMethod = ({ methodName }) => {
   async function sendMethod() {
     const realArgs = args.map((arg) => arg.realAmount);
     setIsLoading(true);
-    const response = await web3.contract?.methods[methodName](...realArgs).send(
-      {
+    const response = await web3.contract?.methods[methodName](...realArgs)
+      .send({
         from: await web3.eth.requestAccounts().then((e) => e[0]),
-      }
-    );
-    setIsLoading(false);
+      }).catch(() => {
+        setResponse('transaction faild!')
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
     // setArgs([]);
     console.log("sent transactoin : ", response);
   }
@@ -25,8 +28,13 @@ const ContractMethod = ({ methodName }) => {
     const realArgs = args.map((arg) => arg.realAmount);
     setIsLoading(true);
 
-    response = await web3.contract?.methods[methodName](...realArgs).call();
-    setIsLoading(false);
+    response = await web3.contract?.methods[methodName](...realArgs)
+      .call().catch(() => {
+        setResponse('view faild!')
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
 
     setArgs([]);
     console.log("called function : ", response);
