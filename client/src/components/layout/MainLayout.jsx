@@ -5,6 +5,7 @@ import { BsLinkedin, BsGithub, BsTelegram, BsMedium } from "react-icons/bs";
 import Web3 from "web3";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 const web3 = new Web3(Web3.givenProvider);
 const networksData = [
   { name: "Ethereum Mainnet", src: "/ether.png", id: "1" },
@@ -15,6 +16,7 @@ const MainLayout = ({ children }) => {
   const [account, setAccount] = useState();
   const [network, setNetwork] = useState();
   const [eth, setEth] = useState();
+  const router = useRouter();
 
   async function connectWallet() {
     const account = await web3.eth
@@ -45,6 +47,7 @@ const MainLayout = ({ children }) => {
   useEffect(() => {
     setEth(window?.ethereum);
   }, []);
+  console.log(router.pathname)
   return (
     <>
       <Head>
@@ -55,12 +58,22 @@ const MainLayout = ({ children }) => {
           <h1 className={styles["title"]}>WeiKit</h1>
           <nav className={styles["nav-bar"]}>
             <div className={styles["nav-link-box"]}>
-              <Link className={styles["nav-link"]} href={"/token-kit"}>
+              <Link
+                className={`${styles["nav-link"]} ${
+                  router.pathname === "/token-kit" ? styles["active"] : null
+                }`}
+                href={"/token-kit"}
+              >
                 Token Kit
               </Link>
             </div>
             <div className={styles["nav-link-box"]}>
-              <Link className={styles["nav-link"]} href={"/create-token"}>
+              <Link
+                className={`${styles["nav-link"]} ${
+                  router.pathname === "/create-token" ? styles["active"] : null
+                }`}
+                href={"/create-token"}
+              >
                 Create Token
               </Link>
             </div>

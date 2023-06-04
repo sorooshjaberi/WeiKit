@@ -57,9 +57,11 @@
         margin-right: 10px;
         border-radius: 100px;
         background-color: $color-primary-dark;
-
       }
     }
+  }
+  .active {
+    color: $color-secondary-light !important;
   }
 }
 .main {
@@ -138,8 +140,8 @@
     }
   }
 }
-.github  {
-scale: 2;
+.github {
+  scale: 2;
   margin: 0 5px 0 0;
   a {
     color: #9317ff;

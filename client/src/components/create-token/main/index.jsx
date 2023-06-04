@@ -29,7 +29,6 @@ const CreateTokenMain = () => {
       const amountInWei = new Web3().utils.toWei(
         values.initialSupply.toString()
       );
-      console.log(values);
       setIsLoading(true);
       createButtonRef.current.disabled = true;
       createButtonRef.current.style.cursor = "not-allowed";
