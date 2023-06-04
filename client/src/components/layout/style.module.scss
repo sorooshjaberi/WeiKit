@@ -69,6 +69,7 @@
   height: calc(100vh - (210px));
   color: #eff6fc;
   background-color: $color-secondary-dark;
+  overflow-y: scroll;
 }
 .footer {
   width: 100%;

@@ -1,8 +1,9 @@
+import { useState } from "react";
 import abiData from "../../public/artifacts/ERC20Token.json";
 import { useWeb3 } from "./Web3Provider";
 const { abi, bytecode } = abiData;
 const useContract = () => {
-  // console.log(abi);
+  const [createdContract, setCreatedContract] = useState();
   const { web3, setContractInWeb3 } = useWeb3();
   async function createContract(name, symbol, initialBalance) {
     console.log(name);
@@ -24,6 +25,8 @@ const useContract = () => {
           response.contractAddress
         );
         setContractInWeb3(response.contractAddress);
+        setCreatedContract(response);
+        localStorage.setItem("created-token", JSON.stringify(response));
       })
       .on("sending", () => {
         console.log("sending transaction... ");
@@ -33,6 +36,6 @@ const useContract = () => {
       });
   }
 
-  return { createContract };
+  return { createContract, createdContract };
 };
 export default useContract;

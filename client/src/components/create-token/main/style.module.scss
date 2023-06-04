@@ -29,16 +29,34 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    &-error{
-        color: orangered;
-        font-size: .8rem;
+    &-error {
+      color: orangered;
+      font-size: 0.8rem;
     }
   }
 }
 .response {
-    background-color: $color-primary-light;
-    color: $color-primary-dark;
-    padding: 0.5rem 0.7rem;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: $color-primary-light;
+  color: $color-primary-dark;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__item {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    span {
+      font-size: 1.2rem;
+      position: relative;
+      // top: -10px;
+      cursor: pointer;
+      right: -10px;
+    }
   }
+}

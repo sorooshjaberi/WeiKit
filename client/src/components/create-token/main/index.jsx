@@ -6,10 +6,17 @@ import Web3 from "web3";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { BarLoader } from "react-spinners";
+import ResponseItem from "./ResponseItem";
 const CreateTokenMain = () => {
   const [isLoading, setIsLoading] = useState();
   const [response, setResponse] = useState();
   const { createContract } = useContract();
+  const createdContract = {
+    transactionHash:
+      "0xc78c55c2706250176bb7eefb352084e3d866fec84c1edb456d15521b08ff7b1f",
+    from: "0x78d73e92a0e96a76f48e47cd106786355d74f805",
+    contractAddress: "0x78d73e92a0e96a76f48e47cd106786355d74f805",
+  };
   const createButtonRef = useRef();
   const formik = useFormik({
     initialValues: {
@@ -44,6 +51,7 @@ const CreateTokenMain = () => {
         });
     },
   });
+  console.log(JSON.stringify(createdContract));
   return (
     <>
       <h1 className={styles["title"]}>Create ERC20 token</h1>
@@ -66,6 +74,19 @@ const CreateTokenMain = () => {
       </form>
       {isLoading && <BarLoader />}
       {response && <p className={styles["response"]}>{response}</p>}
+      {createdContract && (
+        <div className={styles["response"]}>
+          <ResponseItem
+            data={createdContract.contractAddress}
+            label={"Token Address"}
+          />
+          <ResponseItem data={createdContract.from} label={"Creator Address"} />
+          <ResponseItem
+            data={createdContract.transactionHash}
+            label={"Transaction Hash"}
+          />
+        </div>
+      )}
     </>
   );
 };
