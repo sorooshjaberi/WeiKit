@@ -2,7 +2,7 @@ import Popup from "@/components/ui/Popup";
 import styles from "./Networks.module.scss";
 import Image from "next/image";
 import { getCurrentNetwork, isAlreadyOn, setNetwork } from "@/helpers/metamask";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 const networksData = [
   { name: "Ethereum Mainnet", src: "/ether.png", id: "1" },
   { name: "Binance Smart Chain", src: "/bnb.png", id: "56" },
@@ -50,4 +50,4 @@ const Networks = ({ onClose }) => {
     </Popup>
   );
 };
-export default Networks;
+export default memo(Networks);

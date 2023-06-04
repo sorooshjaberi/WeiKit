@@ -2,6 +2,7 @@ import { useWeb3 } from "@/web3/Web3Provider";
 import styles from "./style.module.scss";
 import { summarizeAddress } from "@/helpers/ui";
 import Image from "next/image";
+import { memo } from "react";
 
 const SelectedTokenData = () => {
   const { contract, web3 } = useWeb3();
@@ -59,4 +60,4 @@ const DetailRow = ({ label, value }) => {
     </div>
   );
 };
-export default SelectedTokenData;
+export default memo(SelectedTokenData);

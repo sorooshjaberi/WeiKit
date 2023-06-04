@@ -1,6 +1,7 @@
 import { summarizeAddress } from "@/helpers/ui";
 import styles from "./style.module.scss";
 import { BiCopy } from "react-icons/bi";
+import { memo } from "react";
 const ResponseItem = ({ data, label }) => {
   return (
     <>
@@ -11,7 +12,7 @@ const ResponseItem = ({ data, label }) => {
           <span
             onClick={() => {
               navigator.clipboard.writeText(data).then(() => {
-                alert(`coppied ${label}`)
+                alert(`coppied ${label}`);
               });
             }}
           >
@@ -22,4 +23,4 @@ const ResponseItem = ({ data, label }) => {
     </>
   );
 };
-export default ResponseItem;
+export default memo(ResponseItem);

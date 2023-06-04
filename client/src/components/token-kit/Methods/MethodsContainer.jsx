@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import KitControllers from "../controllers";
 import MethodsList from "./MethodsList";
 import styles from "./methodsContainer.module.scss";
 import MethodWide from "./MethodWide";
 const MethodsContainer = () => {
   const [wideMethod, setWideMethod] = useState();
-  console.log(wideMethod);
   return (
     <>
       <div className={styles["main"]}>
@@ -18,4 +17,4 @@ const MethodsContainer = () => {
     </>
   );
 };
-export default MethodsContainer;
+export default memo(MethodsContainer);

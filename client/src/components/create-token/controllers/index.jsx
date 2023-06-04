@@ -1,6 +1,6 @@
 import Networks from "@/components/token-kit/popups/Networks";
 import styles from "./style.module.scss";
-import {useState} from 'react'
+import {memo, useState} from 'react'
 const CreateControllers = () => {
   const [popoupNumber, setPopupNumber] = useState(0);
   let popup = null;
@@ -25,4 +25,4 @@ const CreateControllers = () => {
     </div>
   );
 };
-export default CreateControllers;
+export default memo(CreateControllers);

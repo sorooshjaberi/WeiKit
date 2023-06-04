@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import abiData from "../../public/artifacts/ERC20Token.json";
 import { useWeb3 } from "./Web3Provider";
 const { abi, bytecode } = abiData;
@@ -38,4 +38,4 @@ const useContract = () => {
 
   return { createContract, createdContract };
 };
-export default useContract;
+export default memo(useContract);

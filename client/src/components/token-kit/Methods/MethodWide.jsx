@@ -1,5 +1,6 @@
 import ContractMethod from "@/web3/ContractMethod";
 import styles from "./methodWide.module.scss";
+import { memo } from "react";
 const MethodWide = ({ method }) => {
   const MethodComponent = () => {
     return <ContractMethod methodName={method.name} />;
@@ -13,4 +14,4 @@ const MethodWide = ({ method }) => {
     </div>
   );
 };
-export default MethodWide;
+export default memo(MethodWide);

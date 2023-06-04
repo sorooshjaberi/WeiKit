@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "./style.module.scss";
 
 const FormInputGroup = ({ label, onInput, type, name, formik }) => {
@@ -18,4 +19,4 @@ const FormInputGroup = ({ label, onInput, type, name, formik }) => {
     </div>
   );
 };
-export default FormInputGroup;
+export default memo(FormInputGroup);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 const Popup = ({ children, onClose }) => {
   return (
@@ -14,4 +14,4 @@ const Popup = ({ children, onClose }) => {
     </div>
   );
 };
-export default Popup;
+export default memo(Popup);

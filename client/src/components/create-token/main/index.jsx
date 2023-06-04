@@ -1,7 +1,7 @@
 import useContract from "@/web3/useContract";
 import styles from "./style.module.scss";
 import FormInputGroup from "./FormInputGroup";
-import { useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import Web3 from "web3";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -90,4 +90,4 @@ const CreateTokenMain = () => {
     </>
   );
 };
-export default CreateTokenMain;
+export default memo(CreateTokenMain);

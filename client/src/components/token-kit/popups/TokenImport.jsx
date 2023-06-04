@@ -1,6 +1,6 @@
 import Popup from "@/components/ui/Popup";
 import styles from "./tokenImport.module.scss";
-import { useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import { useWeb3 } from "@/web3/Web3Provider";
 import { getCurrentNetwork } from "@/helpers/metamask";
 const TokenImport = ({ onClose }) => {
@@ -41,4 +41,4 @@ const TokenImport = ({ onClose }) => {
     </Popup>
   );
 };
-export default TokenImport;
+export default memo(TokenImport);

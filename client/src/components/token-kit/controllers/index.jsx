@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import Networks from "../popups/Networks";
 import TokenSelect from "../popups/TokenSelect";
@@ -47,4 +47,4 @@ const KitControllers = () => {
     </div>
   );
 };
-export default KitControllers;
+export default memo(KitControllers);

@@ -4,7 +4,7 @@ import styles from "./TokenSelect.module.scss";
 import { tokens } from "./../../../../token";
 import { getCurrentNetwork } from "@/helpers/metamask";
 import { useWeb3 } from "@/web3/Web3Provider";
-import { useState } from "react";
+import { memo, useState } from "react";
 import Web3 from "web3";
 const TokenSelect = ({ onClose }) => {
   const { setContractInWeb3, web3 } = useWeb3();
@@ -54,4 +54,4 @@ const TokenSelect = ({ onClose }) => {
     </Popup>
   );
 };
-export default TokenSelect;
+export default memo(TokenSelect);

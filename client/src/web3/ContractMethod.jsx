@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import abiData from "../../public/artifacts/ERC20.json";
 import { useWeb3 } from "./Web3Provider";
 import styles from "./style.module.scss";
@@ -124,4 +124,4 @@ const ContractMethod = ({ methodName }) => {
     </div>
   );
 };
-export default ContractMethod;
+export default memo(ContractMethod);

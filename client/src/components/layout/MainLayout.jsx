@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import { BsLinkedin, BsGithub, BsTelegram, BsMedium } from "react-icons/bs";
 import Web3 from "web3";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 const web3 = new Web3(Web3.givenProvider);
@@ -157,4 +157,4 @@ const MainLayout = ({ children }) => {
     </>
   );
 };
-export default MainLayout;
+export default memo(MainLayout);

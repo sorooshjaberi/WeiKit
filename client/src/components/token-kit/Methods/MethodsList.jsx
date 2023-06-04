@@ -1,5 +1,6 @@
 import styles from "./methodslList.module.scss";
 import abiData from "../../../../public/artifacts/ERC20.json";
+import { memo } from "react";
 const { abi } = abiData;
 
 function getMethodsByType(type) {
@@ -47,4 +48,4 @@ const MethodsList = ({ setWideMethod, wideMethod }) => {
     </div>
   );
 };
-export default MethodsList;
+export default memo(MethodsList);

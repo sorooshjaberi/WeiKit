@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 import KitControllers from "@/components/token-kit/controllers";
 import MethodsContainer from "@/components/token-kit/Methods/MethodsContainer";
 const TokenKit = () => {
-  const { web3,  } = useWeb3();
+  const { web3  } = useWeb3();
 
 
   const Empty = (
