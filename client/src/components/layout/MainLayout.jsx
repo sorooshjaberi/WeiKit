@@ -47,7 +47,6 @@ const MainLayout = ({ children }) => {
   useEffect(() => {
     setEth(window?.ethereum);
   }, []);
-  console.log(router.pathname)
   return (
     <>
       <Head>
@@ -80,7 +79,11 @@ const MainLayout = ({ children }) => {
           </nav>
         </div>
         <div className={styles["nav-controllers"]}>
-          <div className={styles["nav-controller"]} onClick={connectWallet}>
+          <button
+            disabled={!eth}
+            className={styles["nav-controller"]}
+            onClick={connectWallet}
+          >
             {network && (
               <div className={styles["network"]}>
                 <Image
@@ -92,7 +95,7 @@ const MainLayout = ({ children }) => {
               </div>
             )}
             {account || "Connect Wallet"}
-          </div>
+          </button>
         </div>
       </header>
       <main className={styles["main"]}>
