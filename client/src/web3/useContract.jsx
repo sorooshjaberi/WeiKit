@@ -2,15 +2,17 @@ import abiData from "../../public/artifacts/ERC20Token.json";
 import { useWeb3 } from "./Web3Provider";
 const { abi, bytecode } = abiData;
 const useContract = () => {
-  console.log(abi);
+  // console.log(abi);
   const { web3, setContractInWeb3 } = useWeb3();
-  async function createContract() {
+  async function createContract(name, symbol, initialBalance) {
+    console.log(name);
     if (!web3?.eth.Contract) {
       console.log("web3 does not exit");
       return;
     }
+    console.log(name);
     const newInstance = await new web3.eth.Contract(abi)
-      .deploy({ data: bytecode, arguments: ["S", "SJB", 100] })
+      .deploy({ data: bytecode, arguments: [name, symbol, initialBalance] })
       .send({
         from: await web3.eth.requestAccounts().then((e) => e[0]),
       })
