@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import { summarizeAddress } from "@/helpers/ui";
 import Image from "next/image";
 import { memo } from "react";
+import { BiCopy } from "react-icons/bi";
 
 const SelectedTokenData = () => {
   const { contract, web3 } = useWeb3();
@@ -31,8 +32,18 @@ const SelectedTokenData = () => {
         <DetailRow
           label={"Address "}
           value={
-            <p style={{ fontSize: "9px" }}>
+            <p style={{ fontSize: "9px" , position:"relative" ,left:"-5px"}}>
               {summarizeAddress(contract._address)}
+              <span
+              className={styles["address"]}
+            onClick={() => {
+              navigator.clipboard.writeText(contract._address).then(() => {
+                alert(`coppied token address`);
+              });
+            }}
+          >
+            <BiCopy />
+          </span>
             </p>
           }
         />

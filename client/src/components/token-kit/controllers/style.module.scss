@@ -60,6 +60,7 @@
       .label {
         margin-right: 5px;
       }
+      position: relative;
     }
     .summary-data {
       display: flex;
@@ -70,5 +71,19 @@
         margin-bottom: 10px;
       }
     }
+  }
+}
+.address {
+  font-size: 1.2rem;
+  position: absolute;
+  // top: -10px;
+  cursor: pointer;
+  right: -16px;
+  scale: 0.6;
+  top: -8px;  
+  color: $color-primary-light;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
   }
 }
