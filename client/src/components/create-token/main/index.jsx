@@ -10,7 +10,7 @@ import ResponseItem from "./ResponseItem";
 const CreateTokenMain = () => {
   const [isLoading, setIsLoading] = useState();
   const [response, setResponse] = useState();
-  const { createContract , createdContract} = useContract();
+  const { createContract, createdContract } = useContract();
   const createButtonRef = useRef();
   const formik = useFormik({
     initialValues: {
@@ -35,13 +35,16 @@ const CreateTokenMain = () => {
       createButtonRef.current.style.cursor = "not-allowed";
       console.log(values.name, values.symbol, amountInWei);
       createContract(values.name, values.symbol, amountInWei)
+        .then(() => {
+          setResponse(null);
+        })
+        .catch(() => {
+          setResponse("Transaction Failed");
+        })
         .finally(() => {
           setIsLoading(false);
           createButtonRef.current.disabled = false;
           createButtonRef.current.style.cursor = "pointer";
-        })
-        .catch(() => {
-          setResponse("Transaction Failed");
         });
     },
   });
