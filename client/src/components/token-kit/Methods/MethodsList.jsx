@@ -40,7 +40,6 @@ const MethodsList = ({ setWideMethod, wideMethod }) => {
   }
   const Sends = listToButtons(getMethodsByType("nonpayable"));
   const Views = listToButtons(getMethodsByType("view")).reverse();
-  console.log(Views);
   return (
     <div className={styles["list"]}>
       {Sends}
