@@ -101,21 +101,14 @@ export const tokens = [
     tokenAddress: "0xBBbbCA6A901c926F240b89EacB641d8Aec7AEafD",
     imageUrl: "https://assets.coingecko.com/coins/images/913/large/LRC.png",
   },
-  {
-    name: "Matic Network Token",
-    symbol: "MATIC",
-    network: "137",
-    tokenAddress: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
-    imageUrl:
-      "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png",
-  },
-  {
-    name: "Quickswap",
-    symbol: "QUICK",
-    network: "137",
-    tokenAddress: "0x831753DD7087CaC61aB5644b308642cc1c33Dc13",
-    imageUrl: "https://assets.coingecko.com/coins/images/14271/large/QUICK.png",
-  },
+  // {
+  //   name: "Matic Network Token",
+  //   symbol: "MATIC",
+  //   network: "137",
+  //   tokenAddress: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+  //   imageUrl:
+  //     "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png",
+  // },
   {
     name: "Aave",
     symbol: "AAVE",
@@ -168,6 +161,14 @@ export const tokens = [
     tokenAddress: "0xD86b5923F3AD7b585eD81B448170ae026c65ae9a",
     imageUrl: "https://assets.coingecko.com/coins/images/18219/large/iron.png",
   },
+  {
+    name: "Quickswap",
+    symbol: "QUICK",
+    network: "137",
+    tokenAddress: "0x831753DD7087CaC61aB5644b308642cc1c33Dc13",
+    imageUrl: "https://assets.coingecko.com/coins/images/14271/large/QUICK.png",
+  },
+
   {
     name: "PancakeSwap Token",
     symbol: "CAKE",

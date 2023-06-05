@@ -65,7 +65,7 @@ const ContractMethod = ({ methodName }) => {
 
   return (
     <div>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={(e) => e.preventDefault()} autoComplete="off">
         <h3 className={styles["title"]}>{method.name.toSentence()}</h3>
         {method.inputs.map((methodInput, index) => {
           return (
