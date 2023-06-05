@@ -38,4 +38,4 @@ const useContract = () => {
 
   return { createContract, createdContract };
 };
-export default memo(useContract);
+export default useContract;

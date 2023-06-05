@@ -10,13 +10,7 @@ import ResponseItem from "./ResponseItem";
 const CreateTokenMain = () => {
   const [isLoading, setIsLoading] = useState();
   const [response, setResponse] = useState();
-  const { createContract } = useContract();
-  const createdContract = {
-    transactionHash:
-      "0xc78c55c2706250176bb7eefb352084e3d866fec84c1edb456d15521b08ff7b1f",
-    from: "0x78d73e92a0e96a76f48e47cd106786355d74f805",
-    contractAddress: "0x78d73e92a0e96a76f48e47cd106786355d74f805",
-  };
+  const { createContract , createdContract} = useContract();
   const createButtonRef = useRef();
   const formik = useFormik({
     initialValues: {
