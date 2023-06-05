@@ -44,7 +44,8 @@ const TokenSelect = ({ onClose }) => {
                     alt="token"
                     width={40}
                     height={40}
-                    src={token.imageUrl}
+                    // src={token.imageUrl}
+                    src={`/assets/${token.symbol}.png`}
                   />
                 </div>
               );
