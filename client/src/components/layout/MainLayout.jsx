@@ -38,11 +38,16 @@ const MainLayout = ({ children }) => {
     });
     setNetwork(network);
   }
+  async function accountChanger() {
+    connectWallet();
+  }
   useEffect(() => {
-    eth &&
+    if (eth) {
       window.ethereum.on("chainChanged", () => {
         networkChanger();
       });
+      window.ethereum.on("accountsChanged" ,accountChanger)
+    }
   }, [eth]);
   useEffect(() => {
     setEth(window?.ethereum);
