@@ -49,7 +49,7 @@ const CreateTokenMain = () => {
   return (
     <>
       <h1 className={styles["title"]}>Create ERC20 token</h1>
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit} autoComplete="off">
         <FormInputGroup label={"Token Name"} name={"name"} formik={formik} />
         <FormInputGroup
           label={"Token Symbol"}
